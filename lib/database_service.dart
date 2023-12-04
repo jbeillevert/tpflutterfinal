@@ -34,7 +34,7 @@ Future<void> updateNote(String noteId, String title, String text, String imageUr
   await FirebaseFirestore.instance.collection('notes').doc(noteId).update({
     'title': title,
     'text': text,
-    // Ne mettez à jour 'imageUrl' que si elle est fournie
+    // Mettre à jour 'imageUrl' que si elle est fournie
     if (imageUrl.isNotEmpty) 'imageUrl': imageUrl,
   });
 }
